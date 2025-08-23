@@ -71,22 +71,8 @@ export function DepoimentosTop() {
             <div className={styles.depoimentoStats}>
               <button className={styles.buttonContato}>ENTRE EM CONTATO</button>
               <div className={styles.statsRight}>
-                <div className={styles.avatars}>
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Image
-                      key={i}
-                      src="/image/10.jpg"
-                      alt="Logo"
-                      width={40}
-                      height={40}
-                      className={styles.logoAvatar}
-                    />
-                  ))}
-                </div>
-                <div className={styles.statsText} ref={statsRef}>
-                  <span className={styles.statsNumber}>{count}K+</span>
-                  <span className={styles.statsLabel}>Vacinas aplicadas</span>
-                </div>
+                
+             
               </div>
             </div>
           </div>

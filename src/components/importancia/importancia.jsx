@@ -126,28 +126,11 @@ export default function Importancia() {
           </p>
         </div>
       </div>
-      <div className={styles.images}>
-        {/* Exemplos de imagens, substitua pelos arquivos reais depois */}
-        <img
-          src="/image/hero1.jpg"
-          alt="Família feliz"
-          className={styles.img}
-        />
-        <img
-          src="/image/hero2.jpg"
-          alt="Crianças brincando"
-          className={styles.img}
-        />
-        <img
-          src="/image/hero3.jpg"
-          alt="Profissionais de saúde"
-          className={styles.img}
-        />
-      </div>
+     
       <div className={styles.cta}>
         <Link href="/servicos" legacyBehavior>
           <a className={styles.buttonBlue}>
-            Saiba mais sobre as nossas vacinas
+            Saiba mais  
           </a>
         </Link>
         <Link href="/contato" legacyBehavior>
