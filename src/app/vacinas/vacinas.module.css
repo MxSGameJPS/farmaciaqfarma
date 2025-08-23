@@ -1,0 +1,149 @@
+/* Modal overlay e modal principal */
+.vacinasModalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(30, 41, 59, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.vacinasModal {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(30, 41, 59, 0.18);
+  padding: 32px 28px 24px 28px;
+  max-width: 1340px;
+  width: 100%;
+  position: relative;
+  animation: fadeInModal 0.3s;
+}
+
+@keyframes fadeInModal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.vacinasModalTitle {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #231942;
+  margin-bottom: 18px;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+.vacinasModalText {
+  font-size: 1.08rem;
+  color: #231942;
+  margin-bottom: 18px;
+  line-height: 1.7;
+}
+.vacinasModalBtns {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+.vacinasModalAgendar {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.vacinasModalAgendar:hover {
+  background: #1e3a5c;
+}
+.vacinasModalFechar {
+  background: #fff;
+  color: #231942;
+  border: 2px solid #231942;
+  border-radius: 24px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.vacinasModalFechar:hover {
+  background: #231942;
+  color: #fff;
+}
+.vacinasMain {
+  background: #d4cfe4;
+  min-height: 100vh;
+  padding: 48px 0 32px 0;
+}
+.vacinasTitle {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #231942;
+  margin-bottom: 32px;
+  font-family: "Montserrat", "Arial", sans-serif;
+  margin-top: 100px;
+}
+.vacinasGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.vacinasCard {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.08);
+  padding: 32px 18px 24px 18px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  min-height: 180px;
+  transition: box-shadow 0.2s;
+}
+.vacinasCard:hover {
+  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
+}
+.vacinasCardNome {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #231942;
+  margin-bottom: 14px;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+.vacinasCardIndicacao {
+  font-size: 1.08rem;
+  color: #231942;
+  margin-bottom: 18px;
+  line-height: 1.6;
+}
+.vacinasCardBtn {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 8px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: auto;
+  cursor: pointer;
+  align-self: flex-end;
+  transition: background 0.2s;
+}
+.vacinasCardBtn:hover {
+  background: #1e3a5c;
+}
