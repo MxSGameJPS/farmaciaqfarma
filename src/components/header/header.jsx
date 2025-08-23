@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -19,16 +19,16 @@ const Header = () => {
       <div className={styles.logo}>QFarma</div>
       <nav className={styles.nav}>
         {navLinks.map((link) => (
-          <Link key={link.href} href={link.href} legacyBehavior>
-            <a
-              className={
-                pathname === link.href
-                  ? `${styles.link} ${styles.active}`
-                  : styles.link
-              }
-            >
-              {link.label}
-            </a>
+          <Link
+            key={link.href}
+            href={link.href}
+            className={
+              pathname === link.href
+                ? `${styles.link} ${styles.active}`
+                : styles.link
+            }
+          >
+            {link.label}
           </Link>
         ))}
       </nav>

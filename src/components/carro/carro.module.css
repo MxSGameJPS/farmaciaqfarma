@@ -1,0 +1,86 @@
+.carroBg {
+  background: #fff;
+  padding: 64px 0 0 0;
+}
+
+.carroContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+
+.carroTextBox {
+  flex: 1 1 400px;
+  min-width: 320px;
+}
+
+.carroTitle {
+  color: #00a6b2;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.carroSubtitle {
+  color: #e0bf00;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}   
+
+.carroImageBox {
+  flex: 1 1 400px;
+  min-width: 520px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.carroImage {
+  max-width: 840px;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+.carroText {
+  color: #7a8ca3;
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+
+.buttonContato {
+  background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);
+  color: #fff;
+  padding: 1rem 1rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 8px rgba(0, 124, 240, 0.12);
+  transition: background 0.2s, transform 0.2s;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+}
+
+.buttonContato:hover {
+  background: #009bbd;
+}
+
+@media (max-width: 900px) {
+  .carroContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .carroImageBox {
+    justify-content: center;
+    width: 100%;
+  }
+}

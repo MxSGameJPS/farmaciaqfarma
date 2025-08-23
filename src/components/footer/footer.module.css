@@ -1,0 +1,142 @@
+.footerBg {
+  background: #0086a8;
+  color: #fff;
+  padding: 48px 0 0 0;
+  margin-top: 50px;
+}
+
+.footerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding: 0 2rem 32px 2rem;
+}
+
+.footerLeft {
+  flex: 1 1 320px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerLogoBox {
+  margin-bottom: 18px;
+}
+
+.footerLogo {
+  width: auto;
+  height: 40px;
+  object-fit: contain;
+}
+
+.footerDesc {
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+.footerCenter {
+  flex: 1 1 320px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerContactBox {
+  margin-bottom: 18px;
+}
+
+.footerContact {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 1.2rem;
+}
+
+.footerRight {
+  flex: 1 1 320px;
+  min-width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footerHoursBox {
+  margin-bottom: 18px;
+}
+
+.footerHoursTitle {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.footerHours {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: #eaf3fa;
+}
+
+.bold {
+  font-weight: 700;
+  color: #fff;
+}
+
+.footerSocialBox {
+  margin-top: 18px;
+}
+
+.footerSocialTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+.footerSocialIcons {
+  display: flex;
+  gap: 16px;
+}
+
+.socialIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #00bcd4;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  transition: background 0.2s;
+}
+.socialIcon:hover {
+  background: #009bbd;
+}
+
+@media (max-width: 900px) {
+  .footerContainer {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 1rem 32px 1rem;
+  }
+  .footerLeft,
+  .footerCenter,
+  .footerRight {
+    align-items: center;
+    text-align: center;
+  }
+}

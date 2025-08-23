@@ -1,3 +1,14 @@
+/* Fade-in ao scroll */
+.fadeInScrollInit {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.77, 0.2, 0.32, 1),
+    transform 0.8s cubic-bezier(0.77, 0.2, 0.32, 1);
+}
+.fadeInScroll {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -5,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
 }
