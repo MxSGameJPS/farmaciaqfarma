@@ -1,0 +1,239 @@
+/* Seção Localização */
+.sobrenosLocalizacaoSection {
+  background: #f7f6fa;
+  padding: 56px 0 56px 0;
+  margin: 0;
+}
+.sobrenosLocalizacaoContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 1400px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.sobrenosLocalizacaoInfo {
+  flex: 1 1 400px;
+  text-align: left;
+  min-width: 280px;
+}
+.sobrenosLocalizacaoIcon {
+  margin-bottom: 12px;
+  text-align: left;
+}
+.sobrenosLocalizacaoTitle {
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #231942;
+  margin-bottom: 12px;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+.sobrenosLocalizacaoText {
+  font-size: 1.15rem;
+  color: #231942;
+  line-height: 1.7;
+  margin-bottom: 0;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+.sobrenosLocalizacaoMapa {
+  flex: 1 1 400px;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sobrenosLocalizacaoMapa iframe {
+  width: 100%;
+  max-width: 400px;
+  height: 280px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.08);
+}
+/* Container dos cards Missão, Visão, Valores lado a lado */
+.sobrenosCardsContainer {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin: 56px auto 48px auto;
+  flex-wrap: wrap;
+  max-width: 1400px;
+}
+.sobrenosCard {
+  flex: 1 1 420px;
+  min-width: 380px;
+  max-width: 470px;
+}
+/* Cards Missão, Visão, Valores */
+.sobrenosCard {
+  background: #f7f6fa;
+  margin: 48px auto;
+  padding: 40px 5vw 32px 5vw;
+  border-radius: 12px;
+  box-shadow: 0 20px 80px rgba(30, 58, 92, 0.212);
+  max-width: 800px;
+  text-align: center;
+
+  &:hover {
+    box-shadow: 0 30px 90px rgba(30, 58, 92, 0.655);
+  }
+}
+.sobrenosCardTitle {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #231942;
+  margin-bottom: 24px;
+  letter-spacing: 1px;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+.sobrenosCardText {
+  font-size: 1.18rem;
+  color: #231942;
+  line-height: 1.7;
+  font-family: "Montserrat", "Arial", sans-serif;
+}
+/* Seção hero igual ao exemplo da imagem */
+.sobrenosHeroExample {
+  background: #161a5c;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 0;
+}
+.sobrenosHeroExampleContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  min-height: 400px;
+  padding: 48px 5vw;
+  flex-wrap: wrap;
+}
+.sobrenosHeroExampleImg {
+  flex: 0 0 420px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 150px;
+}
+.sobrenosHeroExampleText {
+  flex: 1 1 400px;
+  color: #fff;
+  max-width: 520px;
+  margin-top: 150px;
+}
+.sobrenosHeroExampleText h1 {
+  font-size: 2.5rem;
+  margin-bottom: 18px;
+}
+.sobrenosHeroExampleText p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+.sobrenosHeroExampleBtn {
+  display: inline-block;
+  background: #eab97a;
+  color: #161a5c;
+  font-weight: bold;
+  padding: 14px 32px;
+  border-radius: 32px;
+  text-decoration: none;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.1);
+  transition: background 0.2s, color 0.2s;
+}
+.sobrenosHeroExampleBtn:hover {
+  background: #ffdcae;
+  color: #1e3a5c;
+}
+.sobrenosMain {
+  background: #f6faff;
+  min-height: 100vh;
+  width: 100%;
+}
+.sobrenosHero {
+  background: linear-gradient(90deg, #1e3a5c 60%, #3b82f6 100%);
+  color: #fff;
+  padding: 48px 16px 32px 16px;
+  margin-bottom: 32px;
+  width: 100%;
+}
+
+.sobrenosHeroContent {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  justify-content: start;
+}
+.sobrenosHeroImg {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  margin-left: 10vw;
+}
+.sobrenosHeroText {
+  flex: 1 1 400px;
+  min-width: 280px;
+}
+.sobrenosHero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 16px;
+  margin-top: 80px;
+  margin-left: 10vw;
+}
+.sobrenosHero p {
+  text-align: start;
+  font-size: 1.2rem;
+  max-width: 400px;
+  line-height: 1.7;
+  margin-left: 10vw;
+}
+.sobrenosEquipe {
+  background: #e3eefe;
+  padding: 32px 16px;
+  border-radius: 12px;
+  margin-bottom: 32px;
+  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.08);
+}
+.sobrenosEquipe h2 {
+  color: #1e3a5c;
+  margin-bottom: 12px;
+}
+.sobrenosValores {
+  background: #fff;
+  padding: 32px 16px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.06);
+}
+.sobrenosValores h2 {
+  color: #1e3a5c;
+  margin-bottom: 12px;
+}
+.sobrenosValores ul {
+  list-style: none;
+  padding: 0;
+}
+.sobrenosValores li {
+  font-size: 1.1rem;
+  color: #2563eb;
+  margin-bottom: 8px;
+  padding-left: 12px;
+  position: relative;
+}
+.sobrenosValores li:before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #1e3a5c;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: absolute;
+  left: 0;
+  top: 7px;
+}
