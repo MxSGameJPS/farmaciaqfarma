@@ -43,10 +43,11 @@
   flex: 1 1 280px;
   text-align: center;
   transition: box-shadow 0.8s;
+
 }
 
 .card:hover {
-  box-shadow: 0 4px 24px rgba(0, 124, 240, 0.15);
+  box-shadow: 0 4px 24px rgb(1, 30, 56);
 }
 
 .icon {
@@ -70,6 +71,11 @@
   justify-content: center;
   margin: 2rem 0;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 .img {
@@ -78,6 +84,11 @@
   height: 140px;
   object-fit: cover;
   box-shadow: 0 2px 12px rgba(0, 124, 240, 0.09);
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: auto;
+  }
 }
 
 .cta {
@@ -85,6 +96,11 @@
   gap: 2rem;
   justify-content: center;
   margin: 2rem 0;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
 
 .buttonBlue {
@@ -97,6 +113,11 @@
   font-size: 1.1rem;
   box-shadow: 0 2px 8px rgba(0, 124, 240, 0.12);
   transition: background 0.2s, transform 0.2s;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
 }
 
 .buttonBlue:hover {
@@ -114,6 +135,11 @@
   font-size: 1.1rem;
   box-shadow: 0 2px 8px rgba(0, 124, 240, 0.12);
   transition: background 0.2s, transform 0.2s;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
 }
 
 .buttonGreen:hover {
