@@ -15,6 +15,12 @@ export default function Footer() {
     <footer className={styles.footerBg}>
       <div className={styles.footerContainer}>
         <div className={styles.footerLeft}>
+          <p className={styles.footerDesc}>
+            Garantir um atendimento diferenciado, minimizando o máximo possível
+            a dor da picadinha é um dos nossos objetivos. Investimos no que há
+            de melhor em tecnologia, tanto no mercado nacional quanto
+            internacional.
+          </p>
           <div className={styles.footerLogoBox}>
             <Image
               src="/image/logo.png"
@@ -24,12 +30,6 @@ export default function Footer() {
               className={styles.footerLogo}
             />
           </div>
-          <p className={styles.footerDesc}>
-            Garantir um atendimento diferenciado, minimizando o máximo possível
-            a dor da picadinha é um dos nossos objetivos. Investimos no que há
-            de melhor em tecnologia, tanto no mercado nacional quanto
-            internacional.
-          </p>
         </div>
         <div className={styles.footerCenter}>
           <div className={styles.footerContactBox}>
