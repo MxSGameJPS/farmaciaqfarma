@@ -134,7 +134,7 @@ export default function Importancia() {
           </a>
         </Link>
         <Link href="/contato" legacyBehavior>
-          <a className={styles.buttonGreen}>Agende sua vacinação</a>
+          <a className={styles.buttonGreen}>Agende aqui</a>
         </Link>
       </div>
       <div className={styles.footer}>
