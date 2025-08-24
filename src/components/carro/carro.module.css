@@ -38,13 +38,14 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  border-radius: 20px;
 }
 
 .carroImage {
-  max-width: 840px;
+  max-width: 540px;
   width: 100%;
   height: auto;
-  border-radius: 0;
+  border-radius: 20px;
   box-shadow: none;
 }
 .carroText {

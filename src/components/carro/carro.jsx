@@ -26,10 +26,10 @@ export default function Carro() {
         </div>
         <div className={styles.carroImageBox}>
           <Image
-            src="/image/carro.png"
+            src="/image/emcasa.png"
             alt="Carro Vacinas Sami"
-            width={840}
-            height={380}
+            width={540}
+            height={180}
             className={styles.carroImage}
             priority
           />
