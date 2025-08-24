@@ -1,5 +1,5 @@
 .footerBg {
-  background: #424242;
+  background: #1352b1;
   color: #fff;
   padding: 48px 0 0 0;
 
@@ -204,7 +204,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #505253;
+    background: #1352b1;
     border-radius: 50%;
     width: 40px;
     height: 40px;
@@ -217,7 +217,7 @@
     }
   }
   .socialIcon:hover {
-    background: #009bbd;
+    background: #0042bd;
 
     @media (max-width: 768px) {
       background: #007a8c;
