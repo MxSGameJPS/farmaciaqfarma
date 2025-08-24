@@ -83,14 +83,14 @@
 .sobrenosCardTitle {
   font-size: 2.5rem;
   font-weight: 900;
-  color: #231942;
+  color: #007cf0;
   margin-bottom: 24px;
   letter-spacing: 1px;
   font-family: "Montserrat", "Arial", sans-serif;
 }
 .sobrenosCardText {
   font-size: 1.18rem;
-  color: #231942;
+  color: #0a0a0a;
   line-height: 1.7;
   font-family: "Montserrat", "Arial", sans-serif;
 }
