@@ -11,6 +11,12 @@ html {
   margin: 0 auto;
   max-width: 100%;
   gap: 3rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 2rem;
+  }
 }
 
 .content {
@@ -21,6 +27,11 @@ html {
   justify-content: center;
   align-items: flex-start;
   margin-left: 10vw;
+
+  @media (max-width: 768px) {
+    margin-left: 0;
+    text-align: center;
+  }
 }
 
 .title {
@@ -29,6 +40,11 @@ html {
   font-weight: 800;
   margin-bottom: 1.2rem;
   line-height: 1.1;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    text-align: center;
+  }
 }
 
 .texto {
@@ -36,6 +52,10 @@ html {
   font-size: 1.25rem;
   margin-bottom: 2.2rem;
   max-width: 600px;
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
 }
 
 .button {
@@ -51,6 +71,11 @@ html {
   display: inline-block;
   margin-top: 1.5rem;
   letter-spacing: 0.5px;
+
+  @media (max-width: 768px) {
+    padding: 12px 16px;
+    font-size: 0.8rem;
+  }
 }
 
 .button:hover {
