@@ -58,9 +58,9 @@ export default function Page() {
       <div ref={sectionRefs[5]} className="fadeInScrollInit">
         <Carro />
       </div>
-      <div ref={sectionRefs[6]} className="fadeInScrollInit">
+      {/* <div ref={sectionRefs[6]} className="fadeInScrollInit">
         <Local />
-      </div>
+      </div> */}
     </main>
   );
 }
