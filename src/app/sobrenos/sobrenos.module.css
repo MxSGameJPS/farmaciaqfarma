@@ -3,6 +3,10 @@
   background: #f7f6fa;
   padding: 56px 0 56px 0;
   margin: 0;
+
+  @media (max-width: 768px) {
+    padding: 32px 0 32px 0;
+  }
 }
 .sobrenosLocalizacaoContent {
   display: flex;
@@ -12,15 +16,28 @@
   max-width: 1400px;
   margin: 0 auto;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    gap: 24px;
+    padding: 0 1rem;
+  }
 }
 .sobrenosLocalizacaoInfo {
   flex: 1 1 400px;
   text-align: left;
   min-width: 280px;
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
 }
 .sobrenosLocalizacaoIcon {
   margin-bottom: 12px;
   text-align: left;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .sobrenosLocalizacaoTitle {
   font-size: 2.2rem;
@@ -28,6 +45,10 @@
   color: #007cf0;
   margin-bottom: 12px;
   font-family: "Montserrat", "Arial", sans-serif;
+
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 }
 .sobrenosLocalizacaoText {
   font-size: 1.15rem;
@@ -35,6 +56,10 @@
   line-height: 1.7;
   margin-bottom: 0;
   font-family: "Montserrat", "Arial", sans-serif;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .sobrenosLocalizacaoMapa {
   flex: 1 1 400px;
@@ -42,6 +67,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .sobrenosLocalizacaoMapa iframe {
   width: 100%;
@@ -60,11 +90,20 @@
   margin: 56px auto 48px auto;
   flex-wrap: wrap;
   max-width: 1400px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 .sobrenosCard {
   flex: 1 1 420px;
   min-width: 380px;
   max-width: 470px;
+
+  @media (max-width: 768px) {
+    max-width: 100%;
+  }
 }
 /* Cards Missão, Visão, Valores */
 .sobrenosCard {
@@ -75,6 +114,10 @@
   box-shadow: 0 20px 80px rgba(30, 58, 92, 0.212);
   max-width: 800px;
   text-align: center;
+
+  @media (max-width: 768px) {
+    padding: 32px 16px;
+  }
 
   &:hover {
     box-shadow: 0 30px 90px rgba(30, 58, 92, 0.655);
@@ -87,12 +130,20 @@
   margin-bottom: 24px;
   letter-spacing: 1px;
   font-family: "Montserrat", "Arial", sans-serif;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .sobrenosCardText {
   font-size: 1.18rem;
   color: #0a0a0a;
   line-height: 1.7;
   font-family: "Montserrat", "Arial", sans-serif;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 /* Seção hero igual ao exemplo da imagem */
 .sobrenosHeroExample {
@@ -100,6 +151,10 @@
   width: 100%;
   padding: 0;
   margin-bottom: 0;
+
+  @media (max-width: 768px) {
+    padding: 32px 16px;
+  }
 }
 .sobrenosHeroExampleContent {
   display: flex;
@@ -109,6 +164,10 @@
   min-height: 400px;
   padding: 48px 5vw;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    padding: 32px 16px;
+  }
 }
 .sobrenosHeroExampleImg {
   flex: 0 0 420px;
@@ -116,21 +175,37 @@
   align-items: center;
   justify-content: center;
   margin-top: 150px;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
 }
 .sobrenosHeroExampleText {
   flex: 1 1 400px;
   color: #fff;
   max-width: 520px;
   margin-top: 150px;
+
+  @media (max-width: 768px) {
+    margin-top: 80px;
+  }
 }
 .sobrenosHeroExampleText h1 {
   font-size: 2.5rem;
   margin-bottom: 18px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .sobrenosHeroExampleText p {
   font-size: 1.15rem;
   line-height: 1.7;
   margin-bottom: 32px;
+
+  @media (max-width: 768px) {
+    text-align: center;
+  }
 }
 .sobrenosHeroExampleBtn {
   display: inline-block;
@@ -143,15 +218,27 @@
   font-size: 1.1rem;
   box-shadow: 0 2px 8px rgba(30, 58, 92, 0.1);
   transition: background 0.2s, color 0.2s;
+
+  @media (max-width: 768px) {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
 }
 .sobrenosHeroExampleBtn:hover {
   background: #ffdcae;
   color: #1e3a5c;
+
+  @media (max-width: 768px) {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
 }
 .sobrenosMain {
   background: #f6faff;
   min-height: 100vh;
   width: 100%;
+
+  
 }
 .sobrenosHero {
   background: linear-gradient(90deg, #001631 60%, #000000 100%);

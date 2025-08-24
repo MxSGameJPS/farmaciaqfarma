@@ -27,6 +27,11 @@
   justify-content: center;
   margin-bottom: 2.5rem;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
 }
 
 .depoimentoCardBig {
@@ -41,6 +46,10 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
+
+  @media (max-width: 768px) {
+    min-width: 100%;
+  }
 }
 
 .depoimentoTitle {

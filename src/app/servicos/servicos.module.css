@@ -107,6 +107,10 @@
   background: #d4dce7;
   min-height: 100vh;
   padding: 48px 0 32px 0;
+
+  @media (max-width: 768px) {
+    padding: 32px 16px;
+  }
 }
 .servicosTitle {
   text-align: center;
