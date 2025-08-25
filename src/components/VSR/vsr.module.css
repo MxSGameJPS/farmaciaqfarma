@@ -16,6 +16,8 @@ html {
     flex-direction: column;
     padding: 2rem 1rem;
     gap: 2rem;
+    align-items: center;
+    justify-content: center;
   }
 }
 
