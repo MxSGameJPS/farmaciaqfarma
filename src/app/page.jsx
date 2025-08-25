@@ -10,6 +10,7 @@ import {
 } from "../components/depoimentos/depoimentos";
 import Carro from "../components/carro/carro";
 import Local from "../components/Local/local";
+import CardsHomeVacinas from "../components/cardsHomeVacinas/cardsHomeVacinas";
 
 export default function Page() {
   const sectionRefs = [
@@ -43,6 +44,7 @@ export default function Page() {
       <div ref={sectionRefs[0]} className="fadeInScrollInit">
         <Hero />
       </div>
+      <CardsHomeVacinas />
       <div ref={sectionRefs[1]} className="fadeInScrollInit">
         <VSR />
       </div>
