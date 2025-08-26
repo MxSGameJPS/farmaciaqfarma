@@ -22,7 +22,16 @@ export default function Carro() {
             oferecemos em nosso espaço. Sendo ideal para crianças, gestantes,
             idosos e pessoas com problemas de locomoção.
           </p>
-          <button className={styles.buttonContato}>ENTRE EM CONTATO</button>
+          <a
+            href={`https://wa.me/554197202738?text=${encodeURIComponent(
+              "Gostaria de saber mais sobre a vacinação em casa. Como Funciona?"
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={styles.buttonContato}
+          >
+            ENTRE EM CONTATO
+          </a>
         </div>
         <div className={styles.carroImageBox}>
           <Image

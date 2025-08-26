@@ -37,11 +37,35 @@ export default function Footer() {
               <FaPhoneAlt className={styles.icon} /> 3030-1777
             </p>
             <p className={styles.footerContact}>
-              <FaWhatsapp className={styles.icon} /> WhatsApp: 41 9 9127-1777
+              <FaWhatsapp className={styles.icon} />
+              WhatsApp:{" "}
+              <a
+                href="https://wa.me/554197202738"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#25D366",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                41 9 9720-2738
+              </a>
             </p>
             <p className={styles.footerContact}>
-              <FaMapMarkerAlt className={styles.icon} /> Av. República
-              Argentina, 1115 - Água Verde, Curitiba/PR
+              <FaMapMarkerAlt className={styles.icon} />
+              <a
+                href="https://www.google.com/maps?q=Av.+Rep%C3%BAblica+Argentina,+1115,+Curitiba+-+PR"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: "#fcfcfcff",
+                  textDecoration: "underline",
+                  fontWeight: "bold",
+                }}
+              >
+                Av. República Argentina, 1115 - Água Verde, Curitiba/PR
+              </a>
             </p>
           </div>
         </div>

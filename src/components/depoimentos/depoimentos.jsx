@@ -3,6 +3,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import styles from "./depoimentos.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 const depoimentos = [
   {
@@ -69,11 +70,10 @@ export function DepoimentosTop() {
               um futuro mais saudável.
             </p>
             <div className={styles.depoimentoStats}>
-              <button className={styles.buttonContato}>ENTRE EM CONTATO</button>
-              <div className={styles.statsRight}>
-                
-             
-              </div>
+              <Link href="/contato" legacyBehavior>
+                <a className={styles.buttonContato}>ENTRE EM CONTATO</a>
+              </Link>
+              <div className={styles.statsRight}></div>
             </div>
           </div>
           <div className={styles.depoimentoCardBig}>
