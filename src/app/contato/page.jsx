@@ -5,21 +5,7 @@ import Local from "../../components/Local/local.jsx";
 import { useState } from "react";
 
 export default function Contato() {
-  const [form, setForm] = useState({
-    nome: "",
-    email: "",
-    whatsapp: "",
-    msg: "",
-  });
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Aqui você pode adicionar lógica para envio do formulário
-    alert("Mensagem enviada! Obrigado pelo contato.");
-    setForm({ nome: "", email: "", whatsapp: "", msg: "" });
-  };
+  // Formulário agora usa FormSubmit para envio direto ao e-mail do contratante
 
   return (
     <main className={styles.contatoMain}>
@@ -57,15 +43,28 @@ export default function Contato() {
             />
           </div>
         </div>
-        <form className={styles.contatoHeroForm} onSubmit={handleSubmit}>
+        <form
+          className={styles.contatoHeroForm}
+          action="https://formsubmit.co/qfarmaf@gmail.com"
+          method="POST"
+        >
           <h2 className={styles.contatoHeroFormTitle}>Fale conosco</h2>
+          {/* Campo oculto para mensagem personalizada */}
+          <input
+            type="hidden"
+            name="_subject"
+            value="Novo contato pelo site QFarma"
+          />
+          <input
+            type="hidden"
+            name="mensagem_padrao"
+            value="Olá, gostaria de agendar uma vacina ou tirar dúvidas. O que eu preciso fazer?"
+          />
           <label>
             Nome
             <input
               name="nome"
               type="text"
-              value={form.nome}
-              onChange={handleChange}
               required
               placeholder="Digite seu nome"
             />
@@ -75,8 +74,6 @@ export default function Contato() {
             <input
               name="email"
               type="email"
-              value={form.email}
-              onChange={handleChange}
               required
               placeholder="Digite seu email"
             />
@@ -86,21 +83,13 @@ export default function Contato() {
             <input
               name="whatsapp"
               type="tel"
-              value={form.whatsapp}
-              onChange={handleChange}
               required
               placeholder="Digite seu WhatsApp"
             />
           </label>
           <label>
             Mensagem
-            <textarea
-              name="msg"
-              value={form.msg}
-              onChange={handleChange}
-              required
-              placeholder="Digite sua mensagem"
-            />
+            <textarea name="msg" required placeholder="Digite sua mensagem" />
           </label>
           <button type="submit" className={styles.contatoHeroFormBtn}>
             Enviar

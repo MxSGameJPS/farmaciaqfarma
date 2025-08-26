@@ -126,16 +126,21 @@ export default function Importancia() {
           </p>
         </div>
       </div>
-     
+
       <div className={styles.cta}>
         <Link href="/servicos" legacyBehavior>
-          <a className={styles.buttonBlue}>
-            Saiba mais  
-          </a>
+          <a className={styles.buttonBlue}>Saiba mais</a>
         </Link>
-        <Link href="/contato" legacyBehavior>
-          <a className={styles.buttonGreen}>Agende aqui</a>
-        </Link>
+        <a
+          href={`https://wa.me/554197202738?text=${encodeURIComponent(
+            "Olá, gostaria de agendar uma vacina, o que eu preciso fazer?"
+          )}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.buttonGreen}
+        >
+          Agende aqui
+        </a>
       </div>
       <div className={styles.footer}>
         <p>

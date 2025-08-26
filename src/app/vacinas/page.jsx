@@ -113,7 +113,16 @@ export default function Vacinas() {
               )}
             </div>
             <div className={styles.vacinasModalBtns}>
-              <a href="/contato" className={styles.vacinasModalAgendar}>
+              <a
+                href={`https://wa.me/554197202738?text=${encodeURIComponent(
+                  `Olá gostaria de agendar a \"${
+                    vacinas[modalIdx].vacina || vacinas[modalIdx].nome
+                  }\", o que eu preciso fazer?`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.vacinasModalAgendar}
+              >
                 Agendar
               </a>
               <button
