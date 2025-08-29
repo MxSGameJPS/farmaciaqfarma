@@ -18,13 +18,13 @@ const cards = [
     icon: <BsFileEarmarkCheck size={48} color="#2563eb" />,
     title: "Análise de cartão de vacinas e Declaração de Situação Vacinal",
     desc: "Saiba mais",
-    details: `A Análise do cartão de vacina é um serviço que demanda tempo e conhecimento do profissional que realiza. Os esquemas vacinais precisam ser feitos seguindo as recomendações da bula do fabricante.\n\nPara se ter a resposta esperada com a vacina, precisamos respeitar os intervalos mínimos entre as doses. Por isso é tão a importante a análise minuciosa desse cartão.\n\nNa Vaccine Já nós fazemos este serviço.\n\nOrientamos as vacinas que podem ser encontradas na rede pública e privada seguindo recomendações dos calendários oficiais, sem custo adicional por esta informação!`,
+    details: `A Análise do cartão de vacina é um serviço que demanda tempo e conhecimento do profissional que realiza. Os esquemas vacinais precisam ser feitos seguindo as recomendações da bula do fabricante.\n\nPara se ter a resposta esperada com a vacina, precisamos respeitar os intervalos mínimos entre as doses. Por isso é tão a importante a análise minuciosa desse cartão.\n\nNa QFarma Já nós fazemos este serviço.\n\nOrientamos as vacinas que podem ser encontradas na rede pública e privada seguindo recomendações dos calendários oficiais, sem custo adicional por esta informação!`,
   },
   {
     icon: <MdVaccines size={48} color="#2563eb" />,
     title: "Planos de Vacinação",
     desc: "Saiba mais",
-    details: `Os planos de vacinação são elaborados de acordo com a idade da criança e a recomendação Médica. O principal benefício do plano é ter a certeza que a criança irá completar o esquema vacinal sem atrasos ou falta. As vacinas ficam armazenadas em câmaras frias em nome da criança.\n\nSolicite um estudo e aproveite mais esta vantagem que a Vaccine Já traz para você!`,
+    details: `Os planos de vacinação são elaborados de acordo com a idade da criança e a recomendação Médica. O principal benefício do plano é ter a certeza que a criança irá completar o esquema vacinal sem atrasos ou falta. As vacinas ficam armazenadas em câmaras frias em nome da criança.\n\nSolicite um estudo e aproveite mais esta vantagem que a QFarma Já traz para você!`,
   },
   {
     icon: <FaHome size={48} color="#2563eb" />,
@@ -42,7 +42,7 @@ const cards = [
     icon: <FaSyringe size={48} color="#2563eb" />,
     title: "Aplicação Injetável de Medicamentos",
     desc: "Saiba mais",
-    details: `Muitos pacientes têm necessidade de administrar medicamentos injetáveis, indicados por médicos em determinadas consultas. Aqui na Vaccine Já, com a receita médica e a medicação em mãos, aplicamos medicamentos por via subcutânea e intramuscular.`,
+    details: `Muitos pacientes têm necessidade de administrar medicamentos injetáveis, indicados por médicos em determinadas consultas. Aqui na QFarma Já, com a receita médica e a medicação em mãos, aplicamos medicamentos por via subcutânea e intramuscular.`,
   },
 ];
 
