@@ -86,7 +86,7 @@ export default function Footer() {
             <p className={styles.footerSocialTitle}>Siga-nos</p>
             <div className={styles.footerSocialIcons}>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/qfarmavacinas"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
@@ -94,7 +94,7 @@ export default function Footer() {
                 <FaInstagram size={28} color="#fff" />
               </a>
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61579829288531"
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.socialIcon}
