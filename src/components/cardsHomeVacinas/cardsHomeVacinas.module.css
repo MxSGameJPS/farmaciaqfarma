@@ -1,197 +1,480 @@
+/* ==========================================================================
+   Cards Home Vacinas - Em harmonia com o Hero
+   ========================================================================== */
+
 .cardsHomeSection {
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 100%;
-  padding: 30px 16px 48px 16px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(30, 58, 92, 0.1);
+  padding: 2.5rem 1.5rem 3rem;
+  position: relative;
+}
+
+/* Header da seção */
+.cardsHomeHeader {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.cardsHomeTag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #007cf0;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid rgba(0, 124, 240, 0.15);
+  border-radius: 20px;
+  background: rgba(0, 124, 240, 0.04);
+  margin-bottom: 0.75rem;
+}
+
+.cardsHomeTitle {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+.cardsHomeSubtitle {
+  font-size: 1rem;
+  color: #718096;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Grid */
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+/* Cards */
+.cardsCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.cardsCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 124, 240, 0.1);
+  border-color: rgba(0, 124, 240, 0.15);
+}
+
+.cardsCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.cardsCardBadge {
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.15rem 0.6rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.cardsCardTitulo {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.cardsCardIndicacao {
+  font-size: 0.85rem;
+  color: #4a5568;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.cardsCardBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 1.2rem;
+  background: transparent;
+  color: #007cf0;
+  border: 1px solid #007cf0;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+}
+
+.cardsCardBtn:hover {
+  background: #007cf0;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 124, 240, 0.3);
+}
+
+/* Footer com botão Conheça */
+.cardsFooter {
+  text-align: center;
 }
 
 .cardsConhecaBtn {
-  display: inline-block;
-  background: #2563eb;
-  color: #fff;
-  font-size: 1.15rem;
-  font-weight: 700;
-  border-radius: 24px;
-  padding: 12px 36px;
-  margin-top: 16px;
-  text-decoration: none;
-  box-shadow: 0px 2px 8px rgba(30, 58, 92, 0.1);
-  transition: background 0.2s;
-}
-.cardsConhecaBtn:hover {
-  background: #1e3a5c;
-}
-
-.cardsGrid {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-
-.cardsCard {
-  background: #f6f6fa;
-  border-radius: 14px;
-  border: 1px solid #1e3a5c;
-  box-shadow: 20px 20px 28px rgba(30, 58, 92, 0.08);
-  padding: 32px 24px;
-  max-width: 320px;
-  flex: 1 1 280px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.cardsCard:hover {
-  box-shadow: 30px 14px 32px rgba(0, 124, 240, 0.1);
-}
-
-.cardsCardNome {
-  font-size: 3.25rem;
-  font-weight: 700;
-  color: #007cf0;
-  margin-bottom: 12px;
-  text-align: center;
-}
-.cardsCardTitulo {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #007cf0;
-  margin-bottom: 12px;
-  text-align: center;
-}
-.cardsCardIndicacao {
-  font-size: 1rem;
-  color: #231942;
-  margin-bottom: 18px;
-}
-.cardsCardBtn {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 18px;
-  padding: 8px 24px;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 2rem;
+  background: #007cf0;
+  color: #ffffff;
+  font-size: 0.95rem;
   font-weight: 600;
-  cursor: pointer;
-  margin-top: auto;
-  transition: background 0.2s;
-}
-.cardsCardBtn:hover {
-  background: #1e3a5c;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 124, 240, 0.25);
 }
 
+.cardsConhecaBtn:hover {
+  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 124, 240, 0.35);
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
 .cardsModalOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(30, 58, 92, 0.25);
-  z-index: 9999;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
-  backdrop-filter: blur(2px);
-  -webkit-backdrop-filter: blur(2px);
+  z-index: 9999;
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
 }
+
 .cardsModal {
-  background: #fff;
-  border-radius: 22px;
-  box-shadow: 0 8px 32px rgba(30, 58, 92, 0.22);
-  padding: 40px 36px 32px 36px;
-  max-width: 480px;
-  width: 95vw;
-  position: relative;
-  z-index: 10000;
+  background: #ffffff;
+  border-radius: 16px;
+  max-width: 640px;
+  width: 100%;
+  max-height: 90vh;
   overflow-y: auto;
-  max-height: 80vh;
-  margin: 0 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  box-sizing: border-box;
-  scrollbar-width: thin;
-  scrollbar-color: #2563eb #e5e7eb;
+  position: relative;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
 }
+
 .cardsModal::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
+
 .cardsModal::-webkit-scrollbar-thumb {
-  background: #2563eb;
+  background: #007cf0;
   border-radius: 8px;
 }
+
 .cardsModal::-webkit-scrollbar-track {
-  background: #e5e7eb;
+  background: rgba(0, 0, 0, 0.04);
   border-radius: 8px;
 }
+
+.cardsModalClose {
+  position: sticky;
+  top: 0.75rem;
+  right: 0.75rem;
+  float: right;
+  background: rgba(0, 0, 0, 0.04);
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4a5568;
+  transition: all 0.3s ease;
+  margin: 0.5rem 0.5rem 0 0;
+  z-index: 10;
+}
+
+.cardsModalClose:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: rotate(90deg);
+}
+
+.cardsModalContent {
+  padding: 0 2rem 2rem 2rem;
+}
+
+.cardsModalHeader {
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.cardsModalTag {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.15rem 0.6rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
 .cardsModalTitle {
   font-size: 1.3rem;
-  font-weight: 800;
-  color: #231942;
-  margin-bottom: 18px;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.2;
 }
-.cardsModalText {
-  font-size: 0.8rem;
-  color: #231942;
-  margin-bottom: 24px;
-  line-height: 1.7;
-}
-.cardsModalBtns {
+
+.cardsModalBody {
   display: flex;
-  gap: 18px;
-  justify-content: flex-end;
+  flex-direction: column;
+  gap: 0.75rem;
 }
+
+.cardsModalSection {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f8faff;
+  border-radius: 10px;
+  border-left: 3px solid #007cf0;
+}
+
+.cardsModalSectionIcon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: #007cf0;
+}
+
+.cardsModalSection h4 {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #007cf0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.15rem;
+}
+
+.cardsModalSection p {
+  font-size: 0.85rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.cardsModalFooter {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+}
+
+.cardsModalFechar {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.cardsModalFechar:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
 .cardsModalAgendar {
-  background: #2563eb;
-  .cardsModalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(30, 58, 92, 0.18);
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  padding: 0.6rem 1.5rem;
+  background: #007cf0;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 2;
+}
+
+.cardsModalAgendar:hover {
+  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 124, 240, 0.35);
+}
+
+/* ==========================================================================
+   Animações
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .cardsHomeSection {
+    padding: 2rem 1rem 2.5rem;
+  }
+
+  .cardsHomeTitle {
+    font-size: 1.8rem;
+  }
+
+  .cardsHomeSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cardsCard {
+    min-height: 160px;
+    padding: 1.25rem;
+  }
+
+  .cardsCardTitulo {
+    font-size: 0.95rem;
+  }
+
+  .cardsCardIndicacao {
+    font-size: 0.8rem;
+  }
+
+  .cardsModal {
+    max-height: 95vh;
+    margin: 0.5rem;
+  }
+
+  .cardsModalContent {
+    padding: 0 1.25rem 1.25rem;
+  }
+
+  .cardsModalTitle {
+    font-size: 1.1rem;
+  }
+
+  .cardsModalSection {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .cardsModalSection p {
+    font-size: 0.8rem;
+  }
+
+  .cardsModalFooter {
+    flex-direction: column;
+  }
+
+  .cardsModalFechar,
+  .cardsModalAgendar {
+    flex: 1;
+    width: 100%;
+  }
+
+  .cardsConhecaBtn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardsHomeTitle {
+    font-size: 1.5rem;
+  }
+
+  .cardsHomeTag {
+    font-size: 0.6rem;
+  }
+
+  .cardsCard {
+    padding: 1rem;
+  }
+
+  .cardsModalClose {
+    width: 28px;
+    height: 28px;
+  }
+
+  .cardsModalClose svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* ==========================================================================
+   Prefers Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .cardsCard {
+    transition: none;
+  }
+  .cardsCard:hover {
+    transform: none;
   }
   .cardsModal {
-    background: #fff;
-    border-radius: 18px;
-    box-shadow: 0 4px 24px rgba(30, 58, 92, 0.18);
-    padding: 40px 32px;
-    max-width: 580px;
-    width: 100%;
-    position: relative;
-    z-index: 10000;
-    overflow-y: auto;
-    max-height: 90vh;
+    animation: none;
   }
-  border: none;
-  border-radius: 18px;
-  padding: 8px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: background 0.2s;
-}
-.cardsModalAgendar:hover {
-  background: #1e3a5c;
-}
-.cardsModalFechar {
-  background: #eee;
-  color: #231942;
-  border: none;
-  border-radius: 18px;
-  padding: 8px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
-}
-.cardsModalFechar:hover {
-  background: #d1d5db;
+  .cardsModalOverlay {
+    animation: none;
+  }
+  .cardsModalClose:hover {
+    transform: none;
+  }
 }

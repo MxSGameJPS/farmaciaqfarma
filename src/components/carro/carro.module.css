@@ -1,113 +1,363 @@
+/* ==========================================================================
+   Carro - Vacinação Domiciliar em Harmonia com os demais componentes
+   ========================================================================== */
+
 .carroBg {
-  background: #fff;
-  padding: 64px 0 0 0;
-  margin-bottom: 50px;
+  background: #ffffff;
+  padding: 4rem 1.5rem;
+  position: relative;
+}
+
+.carroBg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 124, 240, 0.03) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .carroContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 32px;
-  flex-wrap: wrap;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
-    padding: 20px;
-  }
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  z-index: 1;
 }
 
+/* ==========================================================================
+   Conteúdo
+   ========================================================================== */
 .carroTextBox {
-  flex: 1 1 400px;
-  min-width: 320px;
+  flex: 1;
+  min-width: 0;
+}
 
-  @media (max-width: 768px) {
-    min-width: 100%;
-  }
+.carroHeader {
+  margin-bottom: 1.5rem;
+}
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #007cf0;
+  padding: 0.25rem 0.8rem;
+  border: 1px solid rgba(0, 124, 240, 0.15);
+  border-radius: 20px;
+  background: rgba(0, 124, 240, 0.04);
+  margin-bottom: 0.75rem;
 }
 
 .carroTitle {
-  color: #007cf0;
+  font-family: var(--font-heading);
   font-size: 2.8rem;
   font-weight: 700;
-  margin-bottom: 12px;
-
-  @media (max-width: 768px) {
-    font-size: 2.4rem;
-  }
+  color: #1a202c;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
 
-.carroSubtitle {
-  color: #e0bf00;
-  font-size: 1.1rem;
-  margin-bottom: 12px;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
-  }
+.highlight {
+  font-family: var(--font-heading);
+  color: #007cf0;
+  position: relative;
+  display: inline-block;
 }
 
+/* REMOVIDO: .highlight::after - linha azul removida */
 
+.carroText {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+  max-width: 540px;
+}
 
-.carroImageBox {
-  flex: 1 1 400px;
-  min-width: 520px;
+.carroText:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+/* ==========================================================================
+   Diferenciais
+   ========================================================================== */
+.carroDiferenciais {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.carroDiferencial {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  border-radius: 20px;
-
-  @media (max-width: 768px) {
-    min-width: 50%;
-  }
+  gap: 0.5rem;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: #4a5568;
+  font-weight: 500;
 }
 
-.carroImage {
-  max-width: 540px;
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  box-shadow: none;
-}
-.carroText {
-  color: #7a8ca3;
-  font-size: 1.2rem;
-  margin-bottom: 24px;
-  line-height: 1.5;
+.diferencialIcon {
+  color: #007cf0;
+  flex-shrink: 0;
 }
 
-
+/* ==========================================================================
+   Botão
+   ========================================================================== */
 .buttonContato {
-  background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);
-  color: #fff;
-  padding: 1rem 1rem;
-  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.8rem 2.2rem;
+  background: #007cf0;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
   font-weight: 600;
+  border-radius: 30px;
   text-decoration: none;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0, 124, 240, 0.12);
-  transition: background 0.2s, transform 0.2s;
-  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 124, 240, 0.25);
   border: none;
   cursor: pointer;
 }
 
 .buttonContato:hover {
-  background: #009bbd;
+  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 124, 240, 0.35);
 }
 
-@media (max-width: 900px) {
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
+.buttonContato:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Imagem
+   ========================================================================== */
+.carroImageBox {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 560px;
+}
+
+.carroImage {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  object-fit: contain;
+  transition: transform 0.5s ease;
+}
+
+.imageWrapper:hover .carroImage {
+  transform: scale(1.02);
+}
+
+.imageBadge {
+  position: absolute;
+  bottom: -1rem;
+  left: -1rem;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.8rem 1.2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.imageBadge span {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #007cf0;
+  line-height: 1;
+}
+
+.imageBadge p {
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  color: #718096;
+  margin: 0.15rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .carroContainer {
+    gap: 2.5rem;
+  }
+
+  .carroTitle {
+    font-size: 2.4rem;
+  }
+
+  .carroText {
+    font-size: 0.95rem;
+  }
+
+  .imageBadge {
+    bottom: -0.5rem;
+    left: -0.5rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .imageBadge span {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carroBg {
+    padding: 3rem 1rem;
+  }
+
   .carroContainer {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 24px;
+    gap: 2rem;
   }
-  .carroImageBox {
+
+  .carroTextBox {
+    text-align: center;
+    order: 2;
+  }
+
+  .carroHeader {
+    text-align: center;
+  }
+
+  .carroTitle {
+    font-size: 2rem;
+  }
+
+  .carroText {
+    max-width: 100%;
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .carroDiferenciais {
     justify-content: center;
+  }
+
+  .buttonContato {
     width: 100%;
+    justify-content: center;
+  }
+
+  .carroImageBox {
+    order: 1;
+    width: 100%;
+  }
+
+  .imageWrapper {
+    max-width: 100%;
+  }
+
+  .imageBadge {
+    bottom: -0.5rem;
+    left: 0.5rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .imageBadge span {
+    font-size: 0.9rem;
+  }
+
+  .imageBadge p {
+    font-size: 0.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .carroBg {
+    padding: 2rem 0.75rem;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+  }
+
+  .carroTitle {
+    font-size: 1.6rem;
+  }
+
+  .carroText {
+    font-size: 0.85rem;
+  }
+
+  .carroDiferenciais {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .carroDiferencial {
+    font-size: 0.8rem;
+  }
+
+  .buttonContato {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  .imageBadge {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .imageBadge span {
+    font-size: 0.8rem;
+  }
+
+  .imageBadge p {
+    font-size: 0.55rem;
+  }
+}
+
+/* ==========================================================================
+   Prefers Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .carroImage {
+    transition: none;
+  }
+  .imageWrapper:hover .carroImage {
+    transform: none;
+  }
+  .buttonContato {
+    transition: none;
+  }
+  .buttonContato:hover {
+    transform: none;
+  }
+  .buttonContato:hover .buttonIcon {
+    transform: none;
   }
 }

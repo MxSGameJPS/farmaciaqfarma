@@ -1,311 +1,693 @@
-/* Localização - estrutura igual ao SobreNos */
-.contatoLocalizacaoSection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 48px auto 0 auto;
-  padding: 0;
+/* ==========================================================================
+   Contato - Em harmonia com os demais componentes
+   ========================================================================== */
 
-  @media (max-width: 768px) {
-    padding: 0 26px;
-    
-  }
-}
-.contatoLocalizacaoContent {
-  display: flex;
-  gap: 48px;
-  align-items: flex-start;
-  justify-content: center;
-  flex-wrap: wrap;
-
-  @media (max-width: 768px) {
-    gap: 16px;
-    padding: 0 26px;
-  }
-}
-
-
-
-.contatoLocalizacaoInfo {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 320px;
-  max-width: 820px;
-
-  @media (max-width: 768px) {
-    max-width: 60%;
-
-  }
-}
-.contatoLocalizacaoIcon {
-  margin-bottom: 18px;
-
-  @media (max-width: 768px) {
-    margin-bottom: 12px;
-  }
-}
-.contatoLocalizacaoTitle {
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #231942;
-  margin-bottom: 12px;
-  font-family: "Montserrat", "Arial", sans-serif;
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
-  }
-}
-.contatoLocalizacaoText {
-  font-size: 1.08rem;
-  color: #231942;
-  margin-bottom: 18px;
-  line-height: 1.7;
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-}
-.contatoLocalizacaoMapa {
-  min-width: 420px;
-  max-width: 820px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.08);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  @media (max-width: 768px) {
-    max-width: 70%;
-  }
-}
 .contatoMain {
-  background: #ffffff;
+  background: #f8faff;
   min-height: 100vh;
-  padding: 48px 0 32px 0;
   width: 100%;
+  overflow-x: hidden;
+}
 
-  @media (max-width: 768px) {
-    padding: 12px 24px;
-    font-size: 1rem;
-  }
-}
-.contatoTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #231942;
-  margin-bottom: 32px;
-  font-family: "Montserrat", "Arial", sans-serif;
-  margin-top: 100px;
-}
-.contatoInfoBox {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 48px;
-  margin: 0 auto auto;
-  justify-content: center;
-}
-.contatoEnderecoBox {
-  background: #fff;
-  border-radius: 10px;
-  padding: 32px 24px;
-}
-.contatoEnderecoTitle {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #231942;
-  margin-bottom: 12px;
-}
-/* HERO CONTATO */
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
 .contatoHero {
-  display: flex;
-  flex-wrap: wrap;
-  max-width: 100%;
-  margin: 0 auto ;
-  background: #fff;
-  border-radius: 18px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a202c 100%);
+  padding: 7rem 2rem 5rem;
+  position: relative;
   overflow: hidden;
-  align-items: stretch;
-  justify-content: space-evenly;
-  gap: 50px;
 }
+
+.contatoHero::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 124, 240, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contatoHeroContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
 .contatoHeroLeft {
-  flex: 1 1 420px;
-  min-width: 340px;
-  max-width: 520px;
-  padding: 48px 40px 48px 48px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #fff;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
-.contatoHeroTitle {
-  font-size: 2rem;
-  font-weight: 900;
-  color: #231942;
-  margin-bottom: 24px;
-  font-family: "Montserrat", "Arial", sans-serif;
+
+.visible .contatoHeroLeft {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.2s;
 }
-.contatoHeroTextBox {
-  margin-bottom: 24px;
+
+.contatoHeroRight {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
 }
-.contatoHeroText {
-  font-size: 1.15rem;
-  color: #231942;
-  margin-bottom: 18px;
-  line-height: 1.7;
+
+.visible .contatoHeroRight {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.4s;
 }
-.contatoHeroList {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 18px 0;
-}
-.contatoHeroList li {
-  font-size: 1.08rem;
-  color: #231942;
-  margin-bottom: 6px;
-}
-.contatoHeroImgBox {
-  margin-top: auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-.contatoHeroImg {
-  width: 100%;
-  max-width: 320px;
-  border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.1);
-  object-fit: cover;
-  height: auto;
-}
-.contatoHeroForm {
-  flex: 1 1 400px;
-  min-width: 320px;
-  max-width: 520px;
-  padding: 48px 48px 48px 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  background: #ffffff;
-}
-.contatoHeroFormTitle {
-  font-size: 1.5rem;
-  font-weight: 800;
-  color: #231942;
-  margin-bottom: 18px;
-  font-family: "Montserrat", "Arial", sans-serif;
-}
-.contatoHeroForm label {
-  font-size: 1rem;
-  color: #231942;
-  font-weight: 500;
-  margin-bottom: 4px;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.contatoHeroForm input,
-.contatoHeroForm textarea {
-  border: 1px solid #bdbdbd;
-  border-radius: 6px;
-  padding: 8px;
-  font-size: 1rem;
-  margin-top: 2px;
-  font-family: inherit;
-  background: #fff;
-  color: #000;
-}
-.contatoHeroForm textarea {
-  min-height: 80px;
-  resize: vertical;
-}
-.contatoHeroFormBtn {
-  background: #2563eb;
-  color: #fdfdfd;
-  border: none;
-  border-radius: 24px;
-  padding: 10px 32px;
-  font-size: 1rem;
+
+.tag {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
   font-weight: 600;
-  margin-top: 12px;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: background 0.2s;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0.25rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  margin-bottom: 1rem;
 }
-.contatoHeroFormBtn:hover {
-  background: #1e3a5c;
+
+.contatoHeroTitle {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+  letter-spacing: -0.02em;
 }
-.contatoHeroImgBox {
-  margin-top: auto;
+
+.gradientText {
+  background: linear-gradient(135deg, #60a5fa, #007cf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contatoHeroDescription {
+  font-family: var(--font-primary);
+  font-size: 1.05rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 480px;
+}
+
+/* ==========================================================================
+   Info Grid
+   ========================================================================== */
+.contatoInfoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.contatoInfoItem {
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: all 0.3s ease;
 }
-.contatoHeroImg {
-  width: 100%;
-  max-width: 320px;
+
+.contatoInfoItem:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.contatoInfoIcon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: rgba(0, 124, 240, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+}
+
+.contatoInfoLabel {
+  display: block;
+  font-family: var(--font-primary);
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.contatoInfoText {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.contatoInfoLink {
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.contatoInfoLink:hover {
+  color: #60a5fa;
+}
+
+/* ==========================================================================
+   Formulário
+   ========================================================================== */
+.contatoFormWrapper {
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
   border-radius: 16px;
-  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.1);
-  object-fit: cover;
-  height: auto;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
 }
-@media (max-width: 900px) {
-  .contatoHero {
-    flex-direction: column;
-    padding: 0;
-  }
-  .contatoHeroLeft,
-  .contatoHeroForm {
-    max-width: 100%;
-    padding: 32px 18px;
-  }
-  .contatoHeroImg {
-    max-width: 100%;
-  }
+
+.contatoFormTitle {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 0.25rem;
 }
+
+.contatoFormSubtitle {
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 1.5rem;
+}
+
 .contatoForm {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1.25rem;
 }
-.contatoForm input,
-.contatoForm textarea {
-  border: 1px solid #bdbdbd;
-  border-radius: 6px;
-  padding: 8px;
-  font-size: 1rem;
-  margin-top: 2px;
-  font-family: inherit;
-  background: #f9f9f9;
-  color: #231942;
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
-.contatoForm textarea {
-  min-height: 80px;
+
+.formLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-primary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.formInput,
+.formTextarea {
+  padding: 0.7rem 1rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.formInput::placeholder,
+.formTextarea::placeholder {
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.formInput:focus,
+.formTextarea:focus {
+  outline: none;
+  border-color: #007cf0;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 124, 240, 0.1);
+}
+
+.formTextarea {
   resize: vertical;
+  min-height: 100px;
 }
+
 .contatoFormBtn {
-  background: #2563eb;
-  color: #f1f1f1;
-  border: none;
-  border-radius: 24px;
-  padding: 10px 32px;
-  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 0.8rem 2rem;
+  background: #007cf0;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
   font-weight: 600;
-  margin-top: 12px;
+  border-radius: 30px;
+  border: none;
   cursor: pointer;
-  align-self: flex-end;
-  transition: background 0.2s;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 124, 240, 0.25);
+  margin-top: 0.5rem;
 }
+
 .contatoFormBtn:hover {
-  background: #1e3a5c;
+  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 124, 240, 0.35);
 }
-.contatoMapaBox {
+
+/* ==========================================================================
+   Form Status
+   ========================================================================== */
+.formSuccess {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: rgba(34, 197, 94, 0.1);
+  border: 1px solid rgba(34, 197, 94, 0.2);
+  border-radius: 8px;
+  color: #4ade80;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+}
+
+.formError {
+  padding: 0.75rem 1rem;
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 8px;
+  color: #f87171;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+}
+
+/* ==========================================================================
+   Localização
+   ========================================================================== */
+.contatoLocalizacaoSection {
+  background: #ffffff;
+  padding: 4rem 2rem;
+  position: relative;
+}
+
+.contatoLocalizacaoSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 124, 240, 0.08), transparent);
+}
+
+.contatoLocalizacaoContent {
+  max-width: 1200px;
   margin: 0 auto;
-  max-width: 900px;
-  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.contatoLocalizacaoInfo {
+  flex: 1;
+  min-width: 0;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s ease;
+}
+
+.visible .contatoLocalizacaoInfo {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.2s;
+}
+
+.contatoLocalizacaoTitle {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.contatoLocalizacaoText {
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  color: #4a5568;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  max-width: 480px;
+}
+
+.locationFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+}
+
+.locationFeature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: #4a5568;
+}
+
+.featureIcon {
+  color: #007cf0;
+  flex-shrink: 0;
+}
+
+.contatoLocalizacaoBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.8rem 2rem;
+  background: transparent;
+  color: #007cf0;
+  border: 2px solid #007cf0;
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.contatoLocalizacaoBtn:hover {
+  background: #007cf0;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 124, 240, 0.25);
+}
+
+.btnIcon {
+  transition: transform 0.3s ease;
+}
+
+.contatoLocalizacaoBtn:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+.contatoLocalizacaoMapa {
+  flex: 0 0 50%;
+  max-width: 560px;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s ease;
+}
+
+.visible .contatoLocalizacaoMapa {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.4s;
+}
+
+.mapWrapper {
+  position: relative;
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+.mapaIframe {
+  width: 100%;
+  height: 320px;
+  border: none;
+  display: block;
+}
+
+.mapBadge {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #1a202c;
+}
+
+.mapBadge svg {
+  color: #007cf0;
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .contatoHeroContent {
+    gap: 2rem;
+  }
+
+  .contatoHeroTitle {
+    font-size: 2.5rem;
+  }
+
+  .contatoInfoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contatoLocalizacaoContent {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contatoHero {
+    padding: 6rem 1.5rem 4rem; /* Aumentado padding superior para evitar sobreposição com o menu */
+  }
+
+  .contatoHeroContent {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contatoHeroLeft {
+    order: 2;
+  }
+
+  .contatoHeroRight {
+    order: 1;
+    margin-top: 1rem; /* Pequeno espaçamento adicional */
+  }
+
+  .contatoHeroTitle {
+    font-size: 2rem;
+  }
+
+  .contatoHeroDescription {
+    font-size: 0.95rem;
+    max-width: 100%;
+  }
+
+  .contatoInfoGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contatoFormWrapper {
+    padding: 1.5rem;
+  }
+
+  .contatoFormTitle {
+    font-size: 1.2rem;
+  }
+
+  .contatoFormSubtitle {
+    font-size: 0.85rem;
+  }
+
+  .contatoForm {
+    gap: 1rem;
+  }
+
+  .contatoLocalizacaoSection {
+    padding: 3rem 1.5rem;
+  }
+
+  .contatoLocalizacaoContent {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .contatoLocalizacaoInfo {
+    text-align: center;
+  }
+
+  .contatoLocalizacaoTitle {
+    font-size: 1.8rem;
+  }
+
+  .contatoLocalizacaoText {
+    max-width: 100%;
+    font-size: 0.95rem;
+  }
+
+  .locationFeatures {
+    align-items: center;
+  }
+
+  .contatoLocalizacaoBtn {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .contatoLocalizacaoMapa {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .mapaIframe {
+    height: 240px;
+  }
+
+  .mapBadge {
+    bottom: 0.5rem;
+    right: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .contatoHero {
+    padding: 5rem 1rem 3rem; /* Aumentado ainda mais para mobile pequeno */
+  }
+
+  .tag {
+    font-size: 0.6rem;
+  }
+
+  .contatoHeroTitle {
+    font-size: 1.6rem;
+  }
+
+  .contatoHeroDescription {
+    font-size: 0.85rem;
+  }
+
+  .contatoInfoGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contatoInfoItem {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .contatoFormWrapper {
+    padding: 1.25rem;
+  }
+
+  .contatoFormTitle {
+    font-size: 1.1rem;
+  }
+
+  .contatoFormBtn {
+    font-size: 0.85rem;
+    padding: 0.7rem 1.5rem;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .formInput,
+  .formTextarea {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .contatoLocalizacaoSection {
+    padding: 2rem 1rem;
+  }
+
+  .contatoLocalizacaoTitle {
+    font-size: 1.5rem;
+  }
+
+  .contatoLocalizacaoText {
+    font-size: 0.85rem;
+  }
+
+  .contatoLocalizacaoBtn {
+    font-size: 0.85rem;
+    padding: 0.6rem 1.5rem;
+  }
+
+  .mapaIframe {
+    height: 200px;
+  }
+
+  .formSuccess,
+  .formError {
+    font-size: 0.8rem;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* ==========================================================================
+   Prefers Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .contatoHeroLeft,
+  .contatoHeroRight,
+  .contatoLocalizacaoInfo,
+  .contatoLocalizacaoMapa {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .contatoInfoItem {
+    transition: none !important;
+  }
+  .contatoInfoItem:hover {
+    background: none !important;
+    border-color: none !important;
+  }
+  .contatoFormBtn {
+    transition: none !important;
+  }
+  .contatoFormBtn:hover {
+    transform: none !important;
+  }
+  .contatoLocalizacaoBtn {
+    transition: none !important;
+  }
+  .contatoLocalizacaoBtn:hover {
+    transform: none !important;
+  }
 }

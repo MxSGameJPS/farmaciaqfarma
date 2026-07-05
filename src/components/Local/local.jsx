@@ -10,7 +10,7 @@ export default function Local() {
       <div className={styles.localContainer}>
         <div className={styles.localCard}>
           <Image
-            src="/image/logo.png"
+            src="/image/equipe.webp"
             alt="Vacinas Sami"
             width={120}
             height={30}

@@ -2,141 +2,168 @@
 
 import styles from "./sobrenos.module.css";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { 
+  FiArrowRight, 
+  FiTarget, 
+  FiEye, 
+  FiHeart,
+  FiUsers,
+  FiAward,
+  FiCheckCircle
+} from "react-icons/fi";
 
 export default function SobreNos() {
-  const sectionRefs = [useRef(), useRef(), useRef()];
+  const [isVisible, setIsVisible] = useState({});
+  const sectionRefs = {
+    hero: useRef(null),
+    cards: useRef(null),
+  };
 
   useEffect(() => {
-    const handleScroll = () => {
-      sectionRefs.forEach((ref) => {
-        if (ref.current) {
-          const rect = ref.current.getBoundingClientRect();
-          if (rect.top < window.innerHeight - 80) {
-            ref.current.classList.add("fadeInScroll");
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({
+              ...prev,
+              [entry.target.id]: true,
+            }));
           }
-        }
-      });
-    };
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
+    );
+
+    Object.values(sectionRefs).forEach((ref) => {
+      if (ref.current) {
+        observer.observe(ref.current);
+      }
+    });
+
+    return () => observer.disconnect();
   }, []);
+
+  const stats = [
+    { value: "5+", label: "Anos de experiência", icon: FiAward },
+    { value: "90+", label: "Clientes atendidos", icon: FiUsers },
+    { value: "98%", label: "Satisfação garantida", icon: FiCheckCircle },
+  ];
 
   return (
     <main className={styles.sobrenosMain}>
+      {/* Hero Section */}
       <section
-        ref={sectionRefs[0]}
-        className={styles.sobrenosHeroExample + " fadeInScrollInit"}
+        id="hero"
+        ref={sectionRefs.hero}
+        className={`${styles.sobrenosHero} ${
+          isVisible.hero ? styles.visible : ""
+        }`}
       >
-        <div className={styles.sobrenosHeroExampleContent}>
-          <div className={styles.sobrenosHeroExampleImg}>
-            <Image
-              src="/image/logo2.png"
-              alt="Logo QFarma"
-              width={420}
-              height={420}
-              priority
-            />
-          </div>
-          <div className={styles.sobrenosHeroExampleText}>
-            <h1>Quem somos</h1>
-            <p>
-              Somos uma farmácia especializada, com mais de 15 anos de atuação.
-              Atendemos gestantes, crianças, adolescentes, adultos e idosos,
-              sempre em busca de excelência no atendimento para oferecer a
-              melhor experiência possível aos nossos clientes.
-              <br />
-              <br />
-              Nosso time é capacitado continuamente, sempre com temas
-              atualizados e oportunos.
-              <br />
-              <br />
-              Sua família vivendo com saúde é nosso compromisso!
+        <div className={styles.sobrenosHeroContent}>
+          <div className={styles.sobrenosHeroText}>
+            <span className={styles.tag}>Sobre Nós</span>
+            <h1 className={styles.sobrenosHeroTitle}>
+              Cuidado que <br />
+              <span className={styles.gradientText}>transforma vidas</span>
+            </h1>
+            <p className={styles.sobrenosHeroDescription}>
+              Somos uma farmácia especializada com mais de 5 anos de atuação. 
+              Atendemos gestantes, crianças, adolescentes, adultos e idosos, 
+              sempre em busca de excelência no atendimento.
             </p>
-            <a href="/servicos" className={styles.sobrenosHeroExampleBtn}>
-              CONHECER NOSSOS SERVIÇOS
-            </a>
-          </div>
-        </div>
-      </section>
-      <div
-        ref={sectionRefs[1]}
-        className={styles.sobrenosCardsContainer + " fadeInScrollInit"}
-      >
-        <section className={styles.sobrenosCard}>
-          <h2 className={styles.sobrenosCardTitle}>MISSÃO:</h2>
-          <p className={styles.sobrenosCardText}>
-            A QFarma é uma farmácia idealizada para oferecer um trabalho de
-            excelência. Trabalhamos de forma humanizada, colocando o cliente
-            sempre em primeiro lugar. Investimos em inovação, tecnologia e em
-            treinamentos específicos, fazendo com que o cuidado com a saúde seja
-            algo tranquilo e até mesmo acolhedor.
-          </p>
-        </section>
-        <section className={styles.sobrenosCard}>
-          <h2 className={styles.sobrenosCardTitle}>VISÃO:</h2>
-          <p className={styles.sobrenosCardText}>
-            Ser referência como Centro de Saúde e Bem-estar, não só em nossa
-            cidade como na região. Ser lembrada como uma farmácia inovadora, com
-            atendimento ágil e de qualidade, e que possa ser chamada por nossos
-            clientes de "minha farmácia de confiança".
-          </p>
-        </section>
-        <section className={styles.sobrenosCard}>
-          <h2 className={styles.sobrenosCardTitle}>VALORES:</h2>
-          <p className={styles.sobrenosCardText}>
-            Oferecer a todos qualidade máxima, não só no atendimento como nos
-            serviços e produtos. Garantir o conforto e tranquilidade de nossos
-            clientes em todo o processo, do início ao fim. Tendo sempre uma
-            equipe capacitada para oferecer um atendimento único e
-            personalizado.
-          </p>
-        </section>
-      </div>
-      <section
-        ref={sectionRefs[2]}
-        className={styles.sobrenosLocalizacaoSection + " fadeInScrollInit"}
-      >
-        <div className={styles.sobrenosLocalizacaoContent}>
-          <div className={styles.sobrenosLocalizacaoInfo}>
-            <div className={styles.sobrenosLocalizacaoIcon}>
-              {/* Ícone de localização usando react-icons */}
-              <svg
-                width="64"
-                height="64"
-                viewBox="0 0 24 24"
-                fill="#007cf0"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M12 2C7.03 2 3 6.03 3 11c0 5.25 7.05 10.39 8.01 11.09.34.25.64.25.98 0C13.95 21.39 21 16.25 21 11c0-4.97-4.03-9-9-9zm0 17.88C10.14 18.13 5 13.97 5 11c0-3.86 3.14-7 7-7s7 3.14 7 7c0 2.97-5.14 7.13-7 8.88z" />
-                <circle cx="12" cy="11" r="3" />
-              </svg>
+            <div className={styles.sobrenosHeroStats}>
+              {stats.map((stat, index) => (
+                <div key={index} className={styles.statItem}>
+                  <stat.icon className={styles.statIcon} />
+                  <div>
+                    <span className={styles.statValue}>{stat.value}</span>
+                    <span className={styles.statLabel}>{stat.label}</span>
+                  </div>
+                </div>
+              ))}
             </div>
-            <h2 className={styles.sobrenosLocalizacaoTitle}>
-              Localização de fácil acesso
-            </h2>
-            <p className={styles.sobrenosLocalizacaoText}>
-              Nossa loja está localizada na República Argentina 1115 loja 2,
-              Água Verde, Curitiba/PR. Fácil acesso, próximo a pontos de
-              referência e com estacionamento gratuito e amplo para sua
-              comodidade.
-            </p>
+            <Link href="/servicos" className={styles.sobrenosHeroBtn}>
+              <span>Conhecer serviços</span>
+              <FiArrowRight className={styles.btnIcon} />
+            </Link>
           </div>
-          <div className={styles.sobrenosLocalizacaoMapa}>
-            <iframe
-              src="https://www.google.com/maps?q=Rep%C3%BAblica+Argentina+1115+loja+2,+Curitiba,+PR&output=embed"
-              width="400"
-              height="280"
-              style={{ border: 0, borderRadius: "12px" }}
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="Mapa QFarma"
-            ></iframe>
+          <div className={styles.sobrenosHeroImage}>
+            <div className={styles.imageWrapper}>
+              <Image
+                src="/image/equipe.webp"
+                alt="Equipe QFarma"
+                width={450}
+                height={450}
+                className={styles.heroImage}
+                priority
+              />
+              <div className={styles.imageOverlay}>
+                <div className={styles.floatingBadge}>
+                  <FiHeart className={styles.badgeIcon} />
+                  <span>+5 anos cuidando de você</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <div className={styles.heroDecoration}>
+          <div className={styles.decorationCircle}></div>
+          <div className={styles.decorationCircle2}></div>
+        </div>
       </section>
+
+      {/* Missão, Visão, Valores */}
+      <div
+        id="cards"
+        ref={sectionRefs.cards}
+        className={`${styles.sobrenosCardsContainer} ${
+          isVisible.cards ? styles.visible : ""
+        }`}
+      >
+        <div className={styles.sobrenosCard}>
+          <div className={styles.cardNumber}>01</div>
+          <div className={styles.sobrenosCardIcon}>
+            <FiTarget size={28} />
+          </div>
+          <h2 className={styles.sobrenosCardTitle}>Missão</h2>
+          <p className={styles.sobrenosCardText}>
+            Oferecer um trabalho de excelência de forma humanizada, colocando o 
+            cliente sempre em primeiro lugar. Investimos em inovação, tecnologia 
+            e treinamentos para um cuidado acolhedor.
+          </p>
+          <div className={styles.cardBorder}></div>
+        </div>
+
+        <div className={`${styles.sobrenosCard} ${styles.cardHighlight}`}>
+          <div className={styles.cardNumber}>02</div>
+          <div className={styles.sobrenosCardIcon}>
+            <FiEye size={28} />
+          </div>
+          <h2 className={styles.sobrenosCardTitle}>Visão</h2>
+          <p className={styles.sobrenosCardText}>
+            Ser referência como Centro de Saúde e Bem-estar na região, lembrada 
+            como uma farmácia inovadora com atendimento ágil e de qualidade, 
+            a "farmácia de confiança" de nossos clientes.
+          </p>
+          <div className={styles.cardBorder}></div>
+        </div>
+
+        <div className={styles.sobrenosCard}>
+          <div className={styles.cardNumber}>03</div>
+          <div className={styles.sobrenosCardIcon}>
+            <FiHeart size={28} />
+          </div>
+          <h2 className={styles.sobrenosCardTitle}>Valores</h2>
+          <p className={styles.sobrenosCardText}>
+            Qualidade máxima no atendimento, serviços e produtos. Garantir 
+            conforto e tranquilidade em todo o processo, com uma equipe 
+            capacitada para um atendimento único e personalizado.
+          </p>
+          <div className={styles.cardBorder}></div>
+        </div>
+      </div>
     </main>
   );
 }

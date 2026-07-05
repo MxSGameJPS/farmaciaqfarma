@@ -1,72 +1,348 @@
-/* Estilos para cards de vacinas na home */
-.vacinasHomeSection {
-  margin: 64px auto 0 auto;
-  max-width: 1100px;
-  padding: 0 16px 48px 16px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 4px 24px rgba(30, 58, 92, 0.1);
+/* ==========================================================================
+   Seção de Vacinas - Em harmonia com o Hero
+   ========================================================================== */
+
+/* Header da seção */
+.vacinasMain {
+  background: #f8faff;
+  min-height: 100vh;
+  padding: 0 0 4rem 0;
 }
 
-.vacinasConhecaBtn {
+.vacinasHeader {
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a202c 100%);
+  padding: 6rem 2rem 4rem;
+  margin-top: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.vacinasHeader::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.08) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.vacinasHeaderContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.vacinasTag {
   display: inline-block;
-  background: #2563eb;
-  color: #fff;
-  font-size: 1.15rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.3rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  margin-bottom: 1rem;
+}
+
+.vacinasTitle {
+  font-size: 3rem;
   font-weight: 700;
-  border-radius: 24px;
-  padding: 12px 36px;
-  margin-top: 16px;
-  text-decoration: none;
-  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.1);
-  transition: background 0.2s;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
 }
-.vacinasConhecaBtn:hover {
-  background: #1e3a5c;
+
+.vacinasSubtitle {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  max-width: 500px;
+  line-height: 1.6;
 }
-/* Modal overlay e modal principal */
+
+/* Grid */
+.vacinasGrid {
+  max-width: 1200px;
+  margin: -2.5rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* Cards */
+.vacinasCard {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
+}
+
+.vacinasCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 124, 240, 0.1);
+  border-color: rgba(0, 124, 240, 0.15);
+}
+
+.vacinasCardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+}
+
+.vacinasCardBadge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+}
+
+.vacinasCardNome {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.vacinasCardIndicacao {
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.5;
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.vacinasCardFooter {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 0.75rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.vacinasCardBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.2rem;
+  background: transparent;
+  color: #007cf0;
+  border: 1px solid #007cf0;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.vacinasCardBtn:hover {
+  background: #007cf0;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 124, 240, 0.3);
+}
+
+/* ==========================================================================
+   Modal
+   ========================================================================== */
 .vacinasModalOverlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background: rgba(30, 41, 59, 0.45);
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
-
-  @media (max-width: 768px) {
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    overflow: scroll;
-  }
+  padding: 1.5rem;
+  animation: fadeIn 0.3s ease;
 }
 
 .vacinasModal {
-  background: #fff;
+  background: #ffffff;
   border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(30, 41, 59, 0.18);
-  padding: 32px 28px 24px 28px;
-  max-width: 1340px;
+  max-width: 700px;
   width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
   position: relative;
-  animation: fadeInModal 0.3s;
+  animation: slideUp 0.4s ease;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
 
-  @media (max-width: 768px) {
-    padding: 16px;
-    max-width: 80%;
-    overflow: scroll;
-    height: 90vh;
+.vacinasModalClose {
+  position: sticky;
+  top: 0.5rem;
+  right: 0.5rem;
+  float: right;
+  background: rgba(0, 0, 0, 0.04);
+  border: none;
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #4a5568;
+  transition: all 0.3s ease;
+  margin: 0.5rem 0.5rem 0 0;
+  z-index: 10;
+}
+
+.vacinasModalClose:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: rotate(90deg);
+}
+
+.vacinasModalContent {
+  padding: 1.5rem 2rem 2rem;
+}
+
+.vacinasModalHeader {
+  margin-bottom: 1.5rem;
+  padding-right: 2rem;
+}
+
+.vacinasModalTag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 0.2rem 0.6rem;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+}
+
+.vacinasModalTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a202c;
+  line-height: 1.2;
+}
+
+.vacinasModalBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.vacinasModalSection {
+  display: flex;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: #f8faff;
+  border-radius: 10px;
+  border-left: 3px solid #007cf0;
+}
+
+.vacinasModalSectionIcon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: #007cf0;
+}
+
+.vacinasModalSection h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #007cf0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.15rem;
+}
+
+.vacinasModalSection p {
+  font-size: 0.9rem;
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.vacinasModalFooter {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+  flex-wrap: wrap;
+}
+
+.vacinasModalFechar {
+  padding: 0.6rem 1.5rem;
+  background: transparent;
+  color: #4a5568;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.vacinasModalFechar:hover {
+  background: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+.vacinasModalAgendar {
+  padding: 0.6rem 1.5rem;
+  background: #007cf0;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  flex: 2;
+}
+
+.vacinasModalAgendar:hover {
+  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 124, 240, 0.35);
+}
+
+/* ==========================================================================
+   Animações
+   ========================================================================== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 
-@keyframes fadeInModal {
+@keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(40px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -74,171 +350,100 @@
   }
 }
 
-.vacinasModalTitle {
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #231942;
-  margin-bottom: 18px;
-  font-family: "Montserrat", "Arial", sans-serif;
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 768px) {
+  .vacinasHeader {
+    padding: 4rem 1.5rem 3rem;
   }
-}
-.vacinasModalText {
-  font-size: 0.9em;
-  color: #231942;
-  margin-bottom: 18px;
-  line-height: 1.9;
 
-  @media (max-width: 768px) {
-    font-size: 0.8em;
+  .vacinasTitle {
+    font-size: 2rem;
   }
-}
-.vacinasModalBtns {
-  display: flex;
-  gap: 16px;
-  justify-content: flex-end;
-  margin-top: 18px;
 
-  @media (max-width: 768px) {
+  .vacinasSubtitle {
+    font-size: 1rem;
+  }
+
+  .vacinasGrid {
+    grid-template-columns: 1fr;
+    padding: 0 1rem;
+    margin-top: -2rem;
+  }
+
+  .vacinasCard {
+    min-height: 160px;
+    padding: 1.25rem;
+  }
+
+  .vacinasCardNome {
+    font-size: 1rem;
+  }
+
+  .vacinasModal {
+    max-height: 95vh;
+    margin: 0.5rem;
+  }
+
+  .vacinasModalContent {
+    padding: 1rem 1.25rem 1.25rem;
+  }
+
+  .vacinasModalTitle {
+    font-size: 1.2rem;
+  }
+
+  .vacinasModalSection {
+    padding: 0.6rem 0.8rem;
+  }
+
+  .vacinasModalFooter {
     flex-direction: column;
-    align-items: center;
   }
-}
-.vacinasModalAgendar {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 8px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  text-decoration: none;
-  cursor: pointer;
-  transition: background 0.2s;
 
-  @media (max-width: 768px) {
-    padding: 12px 24px;
-    font-size: 1rem;
+  .vacinasModalFechar,
+  .vacinasModalAgendar {
+    flex: 1;
+    width: 100%;
   }
 }
-.vacinasModalAgendar:hover {
-  background: #1e3a5c;
-}
-.vacinasModalFechar {
-  background: #fff;
-  color: #231942;
-  border: 2px solid #231942;
-  border-radius: 24px;
-  padding: 8px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
 
-  @media (max-width: 768px) {
-    padding: 12px 24px;
-    font-size: 1rem;
+@media (max-width: 480px) {
+  .vacinasTitle {
+    font-size: 1.6rem;
   }
-}
-.vacinasModalFechar:hover {
-  background: #231942;
-  color: #fff;
-}
-.vacinasMain {
-  background: #f6faff;
-  min-height: 100vh;
-  padding: 48px 0 32px 0;
 
-  @media (max-width: 768px) {
-    padding: 32px 16px;
+  .vacinasSubtitle {
+    font-size: 0.9rem;
   }
-}
-.vacinasTitle {
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 900;
-  color: #231942;
-  margin-bottom: 32px;
-  font-family: "Montserrat", "Arial", sans-serif;
-  margin-top: 100px;
 
-  @media (max-width: 768px) {
-    margin-top: 80px;
+  .vacinasGrid {
+    padding: 0 0.75rem;
   }
-}
-.vacinasGrid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  max-width: 1400px;
-  margin: 0 auto;
-  
 
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 16px;
+  .vacinasCard {
+    padding: 1rem;
   }
 }
-.vacinasCard {
-  background: #fff;
-  border-radius: 10px;
-  border: 1px solid #1e3a5c;
-  box-shadow: 0 2px 8px rgba(30, 58, 92, 0.08);
-  padding: 32px 18px 24px 18px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  min-height: 180px;
-  transition: box-shadow 0.2s;
 
-  @media (max-width: 768px) {
-    padding: 16px 12px;
+/* ==========================================================================
+   Prefers Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .vacinasCard {
+    transition: none;
   }
-}
-.vacinasCard:hover {
-  box-shadow: 0 4px 16px rgba(37, 99, 235, 0.12);
-}
-.vacinasCardNome {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #231942;
-  margin-bottom: 14px;
-  font-family: "Montserrat", "Arial", sans-serif;
-
-  @media (max-width: 768px) {
-    font-size: 1.1rem;
+  .vacinasCard:hover {
+    transform: none;
   }
-}
-.vacinasCardIndicacao {
-  font-size: 1.08rem;
-  color: #231942;
-  margin-bottom: 18px;
-  line-height: 1.6;
-
-  @media (max-width: 768px) {
-    font-size: 1rem;
+  .vacinasModal {
+    animation: none;
   }
-}
-.vacinasCardBtn {
-  background: #2563eb;
-  color: #fff;
-  border: none;
-  border-radius: 24px;
-  padding: 8px 24px;
-  font-size: 1rem;
-  font-weight: 600;
-  margin-top: auto;
-  cursor: pointer;
-  align-self: flex-end;
-  transition: background 0.2s;
-
-  @media (max-width: 768px) {
-    padding: 12px 24px;
-    font-size: 1rem;
+  .vacinasModalOverlay {
+    animation: none;
   }
-}
-.vacinasCardBtn:hover {
-  background: #1e3a5c;
+  .vacinasModalClose:hover {
+    transform: none;
+  }
 }

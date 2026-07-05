@@ -1,187 +1,412 @@
-/* Wrapper para os cards pequenos centralizados e com espaçamento ajustado */
-.depoimentosCardsWrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  position: relative;
-  margin-top: -110px;
-  margin-bottom: 0;
-  z-index: 2;
-}
+/* ==========================================================================
+   Depoimentos - Em harmonia com os demais componentes
+   ========================================================================== */
+
 .depoimentosBg {
-  background: #81bef7;
-  padding: 5rem 0 3rem 0;
-  border-radius: 15rem 0 15rem 0;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a202c 100%);
+  padding: 4rem 0 5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.depoimentosBg::before {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(0, 124, 240, 0.06) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.depoimentosBg::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(96, 165, 250, 0.04) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .depoimentosContainer {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
-.depoimentosTop {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-bottom: 2.5rem;
-  flex-wrap: wrap;
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.depoimentosHeader {
+  text-align: center;
+  margin-bottom: 3rem;
+}
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
+.tag {
+  display: inline-block;
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  padding: 0.25rem 0.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(4px);
+  margin-bottom: 0.75rem;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.highlight {
+  font-family: var(--font-heading);
+  color: #60a5fa;
+  position: relative;
+  display: inline-block;
+}
+
+/* REMOVIDO: .highlight::after - linha azul removida */
+
+/* ==========================================================================
+   Cards Grandes
+   ========================================================================== */
+.depoimentosTop {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
 }
 
 .depoimentoCardBig {
-  background: #0b65b9;
-  border-radius: 2rem;
-  box-shadow: 0 4px 32px rgba(0, 124, 240, 0.1);
-  padding: 1.5rem 2rem;
-  flex: 1 1 400px;
-  min-width: 440px;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 16px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
+}
 
-  @media (max-width: 768px) {
-    min-width: 100%;
-  }
+.depoimentoCardBig:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.cardBigIcon {
+  width: 44px;
+  height: 44px;
+  background: rgba(96, 165, 250, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #60a5fa;
+  margin-bottom: 1rem;
 }
 
 .depoimentoTitle {
+  font-family: var(--font-heading);
   font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.7rem;
-  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 
 .depoimentoSubtitle {
-  font-size: 1.1rem;
-  font-weight: 500;
-  margin-bottom: 1.2rem;
+  font-family: var(--font-primary);
+  font-size: 1rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 1rem;
 }
 
 .depoimentoText {
-  font-size: 1rem;
-  margin-bottom: 2rem;
-  line-height: 1.5;
+  font-family: var(--font-primary);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
 }
 
+/* ==========================================================================
+   Stats
+   ========================================================================== */
 .depoimentoStats {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-top: 1.5rem;
+  flex-wrap: wrap;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
 }
 
-.buttonContato {
-  background: linear-gradient(90deg, #007cf0 0%, #00dfd8 100%);
-  color: #fff;
-  padding: 1rem 1rem;
-  border-radius: 30px;
-  font-weight: 600;
-  text-decoration: none;
-  font-size: 0.9rem;
-  box-shadow: 0 2px 8px rgba(0, 124, 240, 0.12);
-  transition: background 0.2s, transform 0.2s;
-  letter-spacing: 0.5px;
-  border: none;
-  cursor: pointer;
-}
-
-.buttonContato:hover {
-  background: linear-gradient(90deg, #00dfd8 0%, #007cf0 100%);
-  transform: scale(1.05);
-}
-
-.statsRight {
-  display: flex;
-  align-items: center;
-  gap: 0.9rem;
-}
-
-.avatars {
-  display: flex;
-  align-items: center;
-  gap: -90px;
-}
-
-.logoAvatar {
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 124, 240, 0.1);
-  background: #fff;
-  border: 2px solid #f8f8f8;
-}
-.logoAvatar2 {
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 124, 240, 0.1);
-  background: #fff;
-  border: 2px solid #f8f8f8;
-  margin-right: 0.9rem;
-}
-
-.statsText {
+.statsItem {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
 }
 
 .statsNumber {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: #fff;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
   line-height: 1;
 }
 
 .statsLabel {
-  font-size: 1rem;
-  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 0.2rem;
 }
 
+.buttonContato {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.6rem 1.5rem;
+  background: #007cf0;
+  color: #ffffff;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.buttonContato:hover {
+  background: #0066cc;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 124, 240, 0.35);
+}
+
+.buttonIcon {
+  transition: transform 0.3s ease;
+}
+
+.buttonContato:hover .buttonIcon {
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   Cards Pequenos
+   ========================================================================== */
 .depoimentosBottom {
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
 }
 
 .depoimentoCardSmall {
-  background: #00bcd4;
-  border-radius: 1.5rem;
-  box-shadow: 0 4px 24px rgba(0, 124, 240, 0.14);
-  padding: 1.5rem 1.5rem 1.5rem 1rem;
-  min-width: 320px;
-  max-width: 340px;
-  color: #fff;
+  background: rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: all 0.3s ease;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  font-weight: 500;
-  font-size: 1.1rem;
-  border: 1px solid #009bbd;
+  gap: 1rem;
+}
+
+.depoimentoCardSmall:hover {
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-2px);
+}
+
+.cardSmallIcon {
+  flex-shrink: 0;
+  color: #fbbf24;
+  margin-top: 0.15rem;
+}
+
+.cardSmallContent {
+  flex: 1;
 }
 
 .depoimentoSmallText {
-  font-size: 1.1rem;
-  line-height: 1.5;
-  text-align: left;
-  margin: 0;
-  color: #fff;
+  font-family: var(--font-primary);
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+  margin: 0 0 0.75rem 0;
+  font-style: italic;
 }
 
-@media (max-width: 1100px) {
-  .depoimentosTop,
-  .depoimentosBottom {
-    flex-direction: column;
-    gap: 1.5rem;
+.cardSmallAuthor {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardSmallAuthor strong {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.cardSmallAuthor span {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* ==========================================================================
+   Cards Wrapper (para compatibilidade)
+   ========================================================================== */
+.depoimentosCardsWrapper {
+  display: none;
+}
+
+/* ==========================================================================
+   Responsividade
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .depoimentosTop {
+    grid-template-columns: 1fr;
   }
+
+  .depoimentosBottom {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .depoimentoStats {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .buttonContato {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .depoimentosBg {
+    padding: 3rem 0 4rem;
+  }
+
   .depoimentosContainer {
     padding: 0 1rem;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .depoimentosTop {
+    gap: 1rem;
+  }
+
+  .depoimentoCardBig {
+    padding: 1.5rem;
+  }
+
+  .depoimentoTitle {
+    font-size: 1.05rem;
+  }
+
+  .depoimentoSubtitle {
+    font-size: 0.9rem;
+  }
+
+  .depoimentoText {
+    font-size: 0.85rem;
+  }
+
+  .depoimentosBottom {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .depoimentoCardSmall {
+    padding: 1.25rem;
+  }
+
+  .depoimentoSmallText {
+    font-size: 0.85rem;
+  }
+
+  .statsNumber {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .depoimentosBg {
+    padding: 2rem 0 3rem;
+  }
+
+  .tag {
+    font-size: 0.6rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .depoimentoCardBig {
+    padding: 1.25rem;
+  }
+
+  .depoimentoCardSmall {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .depoimentoStats {
+    gap: 1rem;
+  }
+
+  .buttonContato {
+    width: 100%;
+    justify-content: center;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.85rem;
+  }
+}
+
+/* ==========================================================================
+   Prefers Reduced Motion
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .depoimentoCardBig,
+  .depoimentoCardSmall {
+    transition: none;
+  }
+  .depoimentoCardBig:hover,
+  .depoimentoCardSmall:hover {
+    transform: none;
+  }
+  .buttonContato {
+    transition: none;
+  }
+  .buttonContato:hover {
+    transform: none;
+  }
+  .buttonContato:hover .buttonIcon {
+    transform: none;
   }
 }
