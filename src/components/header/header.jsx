@@ -177,74 +177,76 @@ const Header = () => {
           aria-label="Navegação principal"
           {...(isMobile ? { "aria-hidden": menuOpen ? "false" : "true" } : {})}
         >
-          <ul
-            className={styles.navList}
-            ref={navListRef}
-            onMouseLeave={() => setHoveredHref(null)}
-          >
-            <li
-              className={styles.navIndicator}
-              style={{
-                transform: `translateX(${indicator.left}px)`,
-                width: `${indicator.width}px`,
-                opacity: indicator.opacity,
-              }}
-              aria-hidden="true"
-            />
-            {navLinks.map((link, index) => (
+          <div className={styles.navInner}>
+            <ul
+              className={styles.navList}
+              ref={navListRef}
+              onMouseLeave={() => setHoveredHref(null)}
+            >
               <li
-                key={link.href}
-                className={styles.navItem}
-                style={{ transitionDelay: `${index * 40}ms` }}
-              >
-                <Link
-                  ref={(el) => {
-                    linkRefs.current[link.href] = el;
-                    if (index === 0) firstLinkRef.current = el;
-                  }}
-                  href={link.href}
-                  className={`${styles.link} ${isActive(link.href) ? styles.active : ""}`}
-                  onClick={handleLinkClick}
-                  onMouseEnter={() => setHoveredHref(link.href)}
-                  onFocus={() => setHoveredHref(link.href)}
-                  aria-current={isActive(link.href) ? "page" : undefined}
+                className={styles.navIndicator}
+                style={{
+                  transform: `translateX(${indicator.left}px)`,
+                  width: `${indicator.width}px`,
+                  opacity: indicator.opacity,
+                }}
+                aria-hidden="true"
+              />
+              {navLinks.map((link, index) => (
+                <li
+                  key={link.href}
+                  className={styles.navItem}
+                  style={{ transitionDelay: `${index * 40}ms` }}
                 >
-                  <span className={styles.linkIcon}>
-                    <link.icon size={18} />
-                  </span>
-                  <span className={styles.linkLabel}>{link.label}</span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+                  <Link
+                    ref={(el) => {
+                      linkRefs.current[link.href] = el;
+                      if (index === 0) firstLinkRef.current = el;
+                    }}
+                    href={link.href}
+                    className={`${styles.link} ${isActive(link.href) ? styles.active : ""}`}
+                    onClick={handleLinkClick}
+                    onMouseEnter={() => setHoveredHref(link.href)}
+                    onFocus={() => setHoveredHref(link.href)}
+                    aria-current={isActive(link.href) ? "page" : undefined}
+                  >
+                    <span className={styles.linkIcon}>
+                      <link.icon size={18} />
+                    </span>
+                    <span className={styles.linkLabel}>{link.label}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-          <div className={styles.navFooter}>
-            <Link href="/contato" className={styles.ctaMobile} onClick={handleLinkClick}>
-              Fale Conosco
-            </Link>
-            <div className={styles.navSocial}>
-              <a
-                href="https://www.instagram.com/qfarmavacinas"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Instagram"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
-                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-              </a>
-              <a
-                href="https://www.facebook.com/profile.php?id=61579829288531"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Facebook"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-                </svg>
-              </a>
+            <div className={styles.navFooter}>
+              <Link href="/contato" className={styles.ctaMobile} onClick={handleLinkClick}>
+                Fale Conosco
+              </Link>
+              <div className={styles.navSocial}>
+                <a
+                  href="https://www.instagram.com/qfarmavacinas"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </a>
+                <a
+                  href="https://www.facebook.com/profile.php?id=61579829288531"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                  </svg>
+                </a>
+              </div>
             </div>
           </div>
         </nav>
